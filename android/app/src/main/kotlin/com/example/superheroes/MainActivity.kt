@@ -1,4 +1,4 @@
-package com.example.superheroes
+package ru.skillbranch.superheroes
 
 import io.flutter.embedding.android.FlutterActivity
 
