@@ -2,10 +2,16 @@ import 'package:flutter/material.dart';
 import 'package:superheroes/blocs/main_bloc.dart';
 import 'package:superheroes/resources/superheroes_colors.dart';
 
-class MainPage extends StatelessWidget {
-  final MainBloc bloc = MainBloc();
+class MainPage extends StatefulWidget {
 
   MainPage({Key? key}) : super(key: key);
+
+  @override
+  State<MainPage> createState() => _MainPageState();
+}
+
+class _MainPageState extends State<MainPage> {
+  final MainBloc bloc = MainBloc();
 
   @override
   Widget build(BuildContext context) {
@@ -37,5 +43,11 @@ class MainPage extends StatelessWidget {
         ),
       ),
     );
+  }
+
+  @override
+  void dispose() {
+    bloc.dispose();
+    super.dispose();
   }
 }
